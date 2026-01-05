@@ -1,0 +1,8 @@
+import bisect
+def lengthOfLIS(nums):
+    dp=[]
+    for n in nums:
+        i=bisect.bisect_left(dp,n)
+        if i==len(dp): dp.append(n)
+        else: dp[i]=n
+    return len(dp)
